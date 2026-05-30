@@ -1,0 +1,23 @@
+# Ignore node_modules in any directory
+**/node_modules/
+
+# Ignore Expo directories
+**/.expo/
+
+# Ignore build outputs
+**/dist/
+**/web-build/
+**/android/
+**/ios/
+
+# Ignore env files
+**/.env
+**/.env*.local
+
+# TypeScript build info
+*.tsbuildinfo
+**/*.tsbuildinfo
+
+# OS files
+.DS_Store
+Thumbs.db

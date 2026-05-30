@@ -1,0 +1,50 @@
+{
+  "expo": {
+    "name": "BreedLink Admin",
+    "slug": "breedlink-admin",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/adminicon.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/adminsplash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#000000"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.breedlink-admin",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adminicon.png",
+        "backgroundColor": "#000000"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.breedlinkadmin.breedlinkadmin"
+    },
+    "web": {
+      "favicon": "./assets/adminicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-router",
+      "expo-web-browser"
+    ],
+    "scheme": "breedlink-admin",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "cc07ce9c-8537-48d8-99a3-5e1492993034"
+      }
+    }
+  }
+}
