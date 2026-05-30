@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Switch, ActivityIndicator } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Switch, ActivityIndicator, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import Icon from '../components/Icon';
@@ -230,8 +230,12 @@ export default function SettingsScreen() {
         await AsyncStorage.removeItem('profile_complete');
         await AsyncStorage.removeItem('profile_incomplete');
         
-        // Redirect to splash screen
-        router.replace('/splash');
+        // Redirect to splash screen or landing page if on web
+        if (Platform.OS === 'web') {
+          window.location.href = 'http://localhost:3000';
+        } else {
+          router.replace('/splash');
+        }
       }
     });
   };

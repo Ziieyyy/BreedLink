@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { Text, View, TouchableOpacity, StyleSheet, ScrollView, Alert } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet, ScrollView, Alert, Platform } from 'react-native';
 import { commonStyles, colors } from '../../styles/adminStyles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
@@ -77,8 +77,12 @@ export default function SettingsScreen() {
               await AsyncStorage.removeItem('profile_complete');
               await AsyncStorage.removeItem('profile_incomplete');
               
-              // Redirect to splash screen
-              router.replace('/splash');
+              // Redirect to splash screen or landing page if on web
+              if (Platform.OS === 'web') {
+                window.location.href = 'http://localhost:3000';
+              } else {
+                router.replace('/splash');
+              }
             } catch (error) {
               console.error('Logout error:', error);
               Alert.alert('Error', 'Failed to logout. Please try again.');
